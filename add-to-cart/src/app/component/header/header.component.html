@@ -1,0 +1,30 @@
+<header>
+    <div class="navbar shadow-sm " style="background-color: #393E46;">
+        <div class="navbar-brand align-item-center d-flex">
+            <span  routerLink="/" style="margin-right: 235%" >
+            <i  style="font-size:30px ;color:white;padding-left: 30px;cursor:pointer"  class="fa-sharp fa-solid fa-store">&nbsp;  
+            </i> 
+            <strong style="font-size:20px;color:white;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;cursor:pointer" >Shoppers-Stop</strong>
+             </span>
+         
+                <div id="links"> 
+                    <ng-container *ngIf="user_email==null"> <!--Conditional Rendering of HTML component using Structural Directives if user has not logged in-->
+                        <span  routerLink="/login" class="btn" style="background-color: whitesmoke;margin-left: 200%;cursor:pointer" >Login/Register</span>
+                    </ng-container>
+                    
+                        <ng-container *ngIf="user_email!=null"><!--If user has logged in logout button will be shown-->
+                                 <span   (click)="handleLogout()" style="color : whitesmoke;border:2px solid whitesmoke;margin-left: 550%; cursor:pointer" class="btn">Logout</span>
+                        </ng-container>
+                </div>
+            </div>
+            <span style="color: whitesmoke; margin-right: -10%;"><i class="fa-solid fa-user"  ></i>&nbsp;{{user_email}}</span>
+            <button routerLink="/cart" class="btn" style="color:whitesmoke;cursor:pointer"><!--Added route to my app logo/-->
+                <i style="font-size:30px"  class="fas fa-cart-plus "></i>
+                <div style="font-size:10px" class="badge bg-danger">{{totalItem}}</div> <!--In red box showing number of items added in cart using interpolation-->
+            </button>
+        </div>
+</header>
+
+
+
+

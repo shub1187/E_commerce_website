@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div style="height:40%; margin-top: 10%; margin-left: 30%; width:50%;display: flex;justify-content: center;align-items: center;" >
+    <div class="col-md-6 mx-auto" style="box-shadow: 5px 5px 5px #393E46;">
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h3 class="mb-0" style="text-align: center;"><i class="fa-solid fa-user-plus" style="margin-right: 7px;"></i>Register</h3>
+                <div class="card-body">
+                    <form  class="form">
+                        <div class="form-group">
+                         <label for=""><i class="fa-solid fa-envelope" style="margin-right:5px"></i>Email</label>
+                            <input [(ngModel)]="registerUserData.email" name="email" type="text" class="form-control rounded-0" required><br/>                
+                        </div>
+                        <div class="form-group">
+                            <label for=""><i class="fa-solid fa-check" style="margin-right:5px" ></i>Password</label>
+                            <input [(ngModel)]="registerUserData.password" name="password" type="password" class="form-control rounded-0" required><br/>
+                        </div>
+                        <div class="form-group">
+                            <label for=""><i class="fa-sharp fa-solid fa-key" style="margin-right:5px"></i>Confirm-Password</label>
+                            <input [(ngModel)]="registerUserData.cnfpassword" name="cnfpassword" type="password" class="form-control rounded-0" required>
+                        </div>
+                        <button  routerLink="/" (click)="registerUser()" type="button" class="btn  float-right mt-2" style=" background-color:#393E46; color: whitesmoke;margin-left: 35%; margin-top: 4%;cursor: pointer;">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

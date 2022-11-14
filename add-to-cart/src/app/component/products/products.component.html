@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div style="margin-left: 30%; margin-top: 10px">
+  <div class="container d-flex">
+    <div class="item">
+      <a>
+        <h6 (click)="handleCategory('allproduct')">All Products</h6> <!--Event binding data via click passing parameter to function-->
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <h6 (click)="handleCategory('jewelery')">Jewelery</h6> <!--Event binding data via click passing parameter to function-->
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <h6 (click)="handleCategory('electronics')">Electronics</h6> <!--Event binding data via click passing parameter to function-->
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <h6 (click)="handleCategory('women')">Womens Clothing</h6> <!--Event binding data via click passing parameter to function-->
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <h6 (click)="handleCategory('men')">Mens Clothing</h6> <!--Event binding data via click passing parameter to function-->
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of updated_productList">
+      <div class="card col-md-3">
+        <img src="{{ item.image }}" alt="" />
+        <h5
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ item.title }}
+        </h5>
+        <p
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ item.description }}
+        </p>
+        <p><strong>Price:</strong>${{ item.price }}</p> 
+        <button
+          class="btn"
+          style="background-color: #393e46; color: whitesmoke"
+          (click)="addtocart(item)"
+        >
+          Add to cart
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
